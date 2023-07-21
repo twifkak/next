@@ -2,7 +2,7 @@ import {App} from "octokit";
 //import getConfig from 'next/config'
 import fs from 'fs';
 
-function requireEnv(key: string): string {
+export function requireEnv(key: string): string {
   const value = process.env[key];
   if (value == null) {
     throw new Error(`Missing ${key} env var. Did you create a .env file?`);
@@ -35,7 +35,7 @@ interface GitHubInfo {
   },
 }
 
-function getGithubInfo(): GitHubInfo {
+export function getGithubInfo(): GitHubInfo {
   return {
     appConfig: {
       appId: requireEnv("GITHUB_APP_ID"),

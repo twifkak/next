@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import ArrowButton from './arrow-button';
+import GitHubLoginButton from './github-login-button';
 
 const Page: React.FC = () => {
   return (
@@ -33,36 +34,17 @@ const Page: React.FC = () => {
       </div>
 
       <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <Link
+        <ArrowButton
           href="/discussions"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Discussions{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            See discussions in the Github repo.
-          </p>
-        </Link>
-
-        <Link
+          title="Discussions"
+          description="See discussions in the Github repo."
+        />
+        <ArrowButton
           href="/about"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            About{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about myself and yourself!
-          </p>
-        </Link>
+          title="About"
+          description="Learn about myself and yourself!"
+        />
+        <GitHubLoginButton />
       </div>
     </main>
   )
